@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Box, Users, Calendar, Dollar } from 'lucide-react';
+import { Box, Users, Calendar, DollarSign } from 'lucide-react';
 
 const HowItWorks = () => {
   const steps = [
@@ -11,7 +11,7 @@ const HowItWorks = () => {
       description: "We deliver and set up the cash cube at your event location, ensuring it's ready for immediate use."
     },
     {
-      icon: <Dollar className="w-10 h-10 text-gold" />,
+      icon: <DollarSign className="w-10 h-10 text-gold" />,
       title: "Load With Cash or Vouchers",
       description: "Fill the machine with approximately 200 'Mellas' (cash or vouchers) for optimal circulation during each session."
     },
