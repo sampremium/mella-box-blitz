@@ -1,10 +1,23 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   const moneyContainerRef = useRef<HTMLDivElement>(null);
+  const [currentText, setCurrentText] = useState("trade shows");
+  const phrases = ["trade shows", "promotions", "events"];
+  
+  // Text rotation effect
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      index = (index + 1) % phrases.length;
+      setCurrentText(phrases[index]);
+    }, 2000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   // Money animation effect
   useEffect(() => {
@@ -60,7 +73,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-300">
-          Create unforgettable experiences with our cash blowing machine. Perfect for trade shows, promotions, and events that demand attention.
+          Perfect for <span className="text-gold font-semibold">{currentText}</span> that demand attention.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
