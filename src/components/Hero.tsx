@@ -1,13 +1,11 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
-
 const Hero = () => {
   const moneyContainerRef = useRef<HTMLDivElement>(null);
   const [currentText, setCurrentText] = useState("trade shows");
   const phrases = ["trade shows", "promotions", "events"];
-  
+
   // Text rotation effect
   useEffect(() => {
     let index = 0;
@@ -15,53 +13,45 @@ const Hero = () => {
       index = (index + 1) % phrases.length;
       setCurrentText(phrases[index]);
     }, 2000);
-    
     return () => clearInterval(interval);
   }, []);
 
   // Money animation effect
   useEffect(() => {
     if (!moneyContainerRef.current) return;
-    
     const container = moneyContainerRef.current;
     const containerWidth = container.offsetWidth;
-    
     const createMoneyElement = () => {
       const money = document.createElement('div');
       money.className = 'money animate-float-money';
-      
+
       // Random position and timing
       const left = Math.random() * containerWidth;
       const delay = Math.random() * 2;
       const duration = 2 + Math.random() * 2;
-      
       money.style.left = `${left}px`;
       money.style.animationDelay = `${delay}s`;
       money.style.animationDuration = `${duration}s`;
-      
       container.appendChild(money);
-      
+
       // Remove the element after animation completes
       setTimeout(() => {
         money.remove();
       }, duration * 1000);
     };
-    
+
     // Create initial money elements
     for (let i = 0; i < 10; i++) {
       setTimeout(() => createMoneyElement(), i * 200);
     }
-    
+
     // Continue creating money elements
     const interval = setInterval(() => {
       createMoneyElement();
     }, 500);
-    
     return () => clearInterval(interval);
   }, []);
-
-  return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden bg-gradient-to-b from-black to-gray-900">
+  return <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden bg-gradient-to-b from-black to-gray-900">
       {/* Money animation container */}
       <div ref={moneyContainerRef} className="money-animation-container"></div>
       
@@ -73,7 +63,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-300">
-          Perfect for <span className="text-gold font-semibold">{currentText}</span> that demand attention.
+          Perfect for <span className="text-gold uppercase px-[21px] py-0 my-0 font-extrabold text-2xl">{currentText}</span> that demand attention.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -92,8 +82,6 @@ const Hero = () => {
           <ArrowDown size={20} />
         </a>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
