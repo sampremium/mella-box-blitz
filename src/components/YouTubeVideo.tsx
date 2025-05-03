@@ -27,7 +27,7 @@ const YouTubeVideo = () => {
           <div className="w-full md:w-1/2 lg:w-1/3 max-w-xs mx-auto">
             <div className="relative pb-[177.77%] h-0 bg-black rounded-lg overflow-hidden shadow-xl border-2 border-gold">
               <iframe 
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                src="https://www.youtube.com/embed/YFjWt53ccUM" 
                 title="Mella Box in Action" 
                 className="absolute top-0 left-0 w-full h-full" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
