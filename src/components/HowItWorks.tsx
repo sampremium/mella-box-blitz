@@ -1,34 +1,25 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Box, Users, Calendar, DollarSign } from 'lucide-react';
-
 const HowItWorks = () => {
-  const steps = [
-    {
-      icon: <Box className="w-10 h-10 text-gold" />,
-      title: "Set Up The Mella Box",
-      description: "We deliver and set up the cash cube at your event location, ensuring it's ready for immediate use."
-    },
-    {
-      icon: <DollarSign className="w-10 h-10 text-gold" />,
-      title: "Load With Cash or Vouchers",
-      description: "Fill the machine with approximately 200 'Mellas' (cash or vouchers) for optimal circulation during each session."
-    },
-    {
-      icon: <Users className="w-10 h-10 text-gold" />,
-      title: "Engage Your Audience",
-      description: "Participants step inside and grab as much as they can without reaching below their knees, creating excitement for everyone watching."
-    },
-    {
-      icon: <Calendar className="w-10 h-10 text-gold" />,
-      title: "Create Memorable Moments",
-      description: "Each participant spends 20-30 seconds inside, typically grabbing 20-35 'Mellas' while creating unforgettable entertainment."
-    }
-  ];
-
-  return (
-    <section id="how-it-works" className="py-20 bg-black">
+  const steps = [{
+    icon: <Box className="w-10 h-10 text-gold" />,
+    title: "Set Up The Mella Box",
+    description: "We deliver and set up the cash cube at your event location, ensuring it's ready for immediate use."
+  }, {
+    icon: <DollarSign className="w-10 h-10 text-gold" />,
+    title: "Load With Cash or Vouchers",
+    description: "Fill the machine with approximately 200 'Mellas' (cash or vouchers) for optimal circulation during each session."
+  }, {
+    icon: <Users className="w-10 h-10 text-gold" />,
+    title: "Engage Your Audience",
+    description: "Participants step inside and grab as much as they can without reaching below their knees, creating excitement for everyone watching."
+  }, {
+    icon: <Calendar className="w-10 h-10 text-gold" />,
+    title: "Create Memorable Moments",
+    description: "Each participant spends 20-30 seconds inside, typically grabbing 20-35 'Mellas' while creating unforgettable entertainment."
+  }];
+  return <section id="how-it-works" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-gold text-2xl font-bold mb-2">HOW IT WORKS</h2>
@@ -40,29 +31,23 @@ const HowItWorks = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => (
-            <Card key={index} className="bg-gray-900 border-gray-800 overflow-hidden">
+          {steps.map((step, index) => <Card key={index} className="bg-gray-900 border-gray-800 overflow-hidden">
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4 p-3 bg-gray-800 rounded-full">
                     {step.icon}
                   </div>
-                  <h4 className="text-xl font-bold mb-3">{step.title}</h4>
+                  <h4 className="text-xl font-bold mb-3 text-slate-300">{step.title}</h4>
                   <p className="text-gray-400">{step.description}</p>
                 </div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         <div className="mt-16 bg-gray-900 p-8 rounded-lg">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-6 md:mb-0 md:pr-6">
-              <img 
-                src="/lovable-uploads/fef7e639-6af8-4ee3-8148-3d4ba02756f3.png" 
-                alt="Mella Box Machine" 
-                className="rounded-lg w-full max-w-md mx-auto"
-              />
+              <img src="/lovable-uploads/fef7e639-6af8-4ee3-8148-3d4ba02756f3.png" alt="Mella Box Machine" className="rounded-lg w-full max-w-md mx-auto" />
             </div>
             <div className="md:w-1/2">
               <h3 className="text-3xl font-bold mb-4">The Game-Changer For Events</h3>
@@ -79,8 +64,6 @@ const HowItWorks = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HowItWorks;
